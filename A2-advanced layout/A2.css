@@ -1,0 +1,171 @@
+/*BRAND COLORS & SPACING */
+:root {
+  --grey: #8a888f;
+  --purple: #231651;
+  --teal: #4DCCBD;
+  --yellow: #EEF36A;
+  --white: #FFFFFF;
+
+  /* spacing values for consistency */
+  --small-space: 16px;
+  --large-space-mobile: 16px;
+  --large-space-tablet: 32px;
+  --large-space-desktop: 48px;
+}
+
+/* GLOBAL STYLES*/
+body {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*HEADER*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--small-space) var(--large-space-mobile);
+  background-color: var(--purple);
+}
+
+.logo {
+  font-family: 'Teko', sans-serif;
+  font-size: 2em;
+  color: var(--yellow);
+  margin: 0;
+}
+
+/* Navigation menu links */
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: var(--large-space-mobile); /* large spacing between nav options */
+  margin: 0;
+  padding: 0;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.searchbtn {
+  background-color: var(--teal);
+  color: var(--dark);
+  border: none;
+  padding: var(--small-space);
+  border-radius: 8px;
+  font-family: 'Teko', sans-serif;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/*MAIN CONTENT CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--large-space-mobile);
+}
+
+/* HERO SECTION */
+.hero {
+  background-color: var(--purple);
+  padding: var(--small-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-space);
+  margin-bottom: var(--large-space-mobile);
+}
+
+.heroposter {
+  width: 100%;
+  height: auto;
+}
+
+.herocontent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Watch Now buttons */
+.watchbtn {
+  background-color: var(--yellow);
+  color: var(--dark);
+  font-family: 'Teko', sans-serif;
+  font-size: 2em;
+  border: none;
+  border-radius: 8px;
+  padding: var(--small-space);
+  cursor: pointer;
+}
+
+/* MOVIE GRID SECTION*/
+.movies {
+  display: grid;
+  gap: var(--small-space);
+}
+
+.moviebox {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--purple);
+  padding: var(--small-space);
+  gap: var(--small-space);
+  border-radius: 8px;
+}
+
+.moviebox img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.movieinfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-space);
+}
+
+/* For horizontal movie layouts */
+.moviebox.horizontal {
+  flex-direction: row;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet (720px) */
+@media (min-width: 720px) {
+  .navbar {
+    padding: var(--small-space) var(--large-space-tablet);
+  }
+
+  .logo {
+    font-size: 3em;
+  }
+
+  /* Hero section becomes side-by-side */
+  .hero {
+    flex-direction: row;
+  }
+
+  /* Two-column movie grid */
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*Desktop (1024px) */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: var(--small-space) var(--large-space-desktop);
+  }
+
+  .movies {
+    grid-template-columns: 1fr 1fr;
+  }
+}
