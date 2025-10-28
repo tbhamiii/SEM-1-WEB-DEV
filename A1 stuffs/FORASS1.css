@@ -1,0 +1,208 @@
+/* =========================
+   Base / Reset
+   Reset default browser styles and set box-sizing for easier layout
+========================= */
+* {
+  box-sizing: border-box; /* makes width & height include padding & border */
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding */
+}
+
+body {
+  background-color: #e9e9e9; /* light grey background for the whole page */
+  font-family: 'Josefin Sans', sans-serif; /* clean, modern font for text */
+  line-height: 1.6; /* makes paragraphs easier to read */
+  font-size: 1rem; /* base font size */
+  color: #111; /* dark text color for readability */
+}
+
+/* =========================
+   Fonts
+   Styling for headings and paragraphs
+========================= */
+h1, h2, h3 {
+  font-family: 'Protest Guerrilla', sans-serif; /* bold, artistic font for headings */
+  line-height: 1.2; /* tighter line spacing for headings */
+}
+
+h1 {
+  font-size: 3.5rem; /* big title for desktop screens */
+}
+
+h2 {
+  font-size: 2rem; /* slightly smaller for subheadings */
+}
+
+p {
+  margin-bottom: 1rem; /* space between paragraphs */
+}
+
+/* =========================
+   Logo
+   Center the logo and make it responsive
+========================= */
+.logo {
+  display: flex;
+  justify-content: center; /* center the logo horizontally */
+  margin: 2rem 0 1rem; /* spacing above and below */
+}
+
+#webLogo {
+  width: 200px; /* desktop size */
+  height: auto; /* keep proportions */
+}
+
+/* Smaller logo on mobile screens */
+@media (max-width: 768px) {
+  #webLogo {
+    width: 80px; 
+  }
+}
+
+/* =========================
+   Navigation
+   Simple horizontal menu
+========================= */
+.nav ul {
+  display: flex;
+  justify-content: center; /* center menu items */
+  gap: 3rem; /* space between links */
+  list-style: none; /* remove bullet points */
+  padding: 1rem 0; /* vertical padding for menu */
+}
+
+.nav ul li a {
+  text-decoration: none; /* remove underline */
+  color: #111; /* dark link color */
+  font-weight: bold; /* make links stand out */
+  font-size: 1.1rem; /* slightly bigger text */
+}
+
+/* =========================
+   Main Container
+   White card for page content with shadow
+========================= */
+.container {
+  background-color: #fff; /* white background */
+  width: 90%; /* leave some space on the sides */
+  max-width: 1000px; /* don’t get too wide */
+  margin: 2rem auto; /* center container vertically and horizontally */
+  padding: 3rem; /* space inside container */
+  box-shadow: 0 0 15px rgba(0,0,0,0.05); /* subtle shadow for depth */
+}
+
+/* Header Text */
+.header {
+  margin-bottom: 2rem; /* space after the header section */
+}
+
+.header h1 {
+  margin-bottom: 0.5rem; /* space between title and subtitle */
+}
+
+.header h2 {
+  font-weight: normal; /* lighter subtitle */
+  font-size: 1.5rem;
+}
+
+/* =========================
+   Intro Paragraph
+   Lead paragraph styling
+========================= */
+.introText {
+  margin-bottom: 3rem; /* spacing after intro section */
+}
+
+.lead {
+  font-size: 1.3rem; /* slightly bigger text to stand out */
+  font-weight: 400; /* normal weight */
+}
+
+/* =========================
+   Columns
+   For multi-column layout
+========================= */
+.MultiColumnText{
+  display: flex;
+  gap: 2rem; /* spacing between columns */
+  margin-bottom: 3rem;
+  flex-wrap: wrap; /* stack columns on smaller screens */
+}
+
+.column {
+  flex: 1 1 30%; /* grow/shrink and base width */
+}
+
+/* =========================
+   Albums Section
+   Featured album + smaller albums grid
+========================= */
+.albums {
+  display: flex;
+  gap: 2rem; /* space between album sections */
+  margin-bottom: 3rem;
+  flex-wrap: wrap; /* responsive wrapping */
+}
+
+.featuredAlbum {
+  flex: 2; /* take up more space */
+}
+
+.featuredAlbum img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* image fills container nicely */
+}
+
+.albumPics {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns for smaller albums */
+  gap: 1rem; /* spacing between images */
+}
+
+.albumPics img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* =========================
+   Author Section
+   Profile picture + info side by side
+========================= */
+.authorSection{
+  display: flex;
+  justify-content: space-between; /* space between image and text */
+  align-items: center; /* align vertically */
+  margin-bottom: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap; /* stack on smaller screens */
+}
+
+.authorInfo{
+  flex: 2; /* text takes more space */
+}
+
+.authorInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.authorPfp img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* make profile picture circular */
+  object-fit: cover; /* keep image proportions */
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  background-color: #14181d; /* dark footer */
+  color: #fff; /* white text */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem; /* slightly smaller text */
+}
